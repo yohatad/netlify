@@ -1,5 +1,10 @@
-import type { Context } from "@netlify/functions"
+// Using CommonJS syntax for requiring the Netlify Functions runtime
+const { handler } = require("@netlify/functions");
 
-export default async (req: Request, context: Context) => {
-  return new Response("Hello, world!")
-}
+// Your function logic
+exports.handler = async (event, context) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: "Hello, World!" })
+  };
+};
