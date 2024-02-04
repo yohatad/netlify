@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 exports.handler = async (event) => {
-  const flaskEndpoint = 'https://d39e-41-173-31-248.ngrok-free.app'; // Replace with your Flask app's URL
+  const flaskEndpoint = 'https://35b3-41-173-31-248.ngrok-free.app/receive-data'; // Replace with your Flask app's URL
 
   const dataToSend = { message: 'Hello from Netlify Function!' };
 
