@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const nameInput = document.getElementById('nameInput');
     const yesButton = document.getElementById('yesButton');
     const noButton = document.getElementById('noButton');
-    let userName = '';
+    let userName = 'hello';
 
-    nameForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        userName = nameInput.value.trim();
-        if (userName) {
-            alert(`Hello, ${userName}! Please make your choice.`);
-        } else {
-            alert('Please enter your name.');
-        }
-    });
+    // nameForm.addEventListener('submit', function(event) {
+    //     event.preventDefault();
+    //     userName = nameInput.value.trim();
+    //     if (userName) {
+    //         alert(`Hello, ${userName}! Please make your choice.`);
+    //     } else {
+    //         alert('Please enter your name.');
+    //     }
+    // });
 
     yesButton.addEventListener('click', function() {
         if (userName) {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => console.log('Success:', data))
             .catch(error => console.error('Error:', error));
-            alert(`${userName} clicked Yes`);
+            alert(`clicked Yes`);
         } else {
             alert('Please enter your name first.');
         }
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => console.log('Success:', data))
             .catch(error => console.error('Error:', error));
-            alert(`${userName} clicked No`);
+            alert(`clicked No`);
         } else {
             alert('Please enter your name first.');
         }
