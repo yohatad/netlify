@@ -1,34 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CSSR4Africa</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Yes or No Choices</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="robot-image">
-            <img src="Africa_logo.png" alt="CSSR4Africa Logo" id="logo-image">
-            <img src="pepper_robot.png" alt="Pepper Robot" id="robot-image">
+    <form id="nameForm">
+        <div class="input-container">
+            <label for="nameInput">Enter Your Name:</label>
+            <input type="text" id="nameInput" placeholder="Your Name Here">
+            <button type="submit" id="submitName">Submit</button>
         </div>
-        <div class="form-container">
-            <form id="mainForm">
-                <label for="name">Enter your name:</label>
-                <input type="text" id="name" name="name"><br><br>
-
-                <button type="button" id="actuatorTestBtn">Actuator Test</button>
-                <button type="button" id="sensorTestBtn">Sensor Test</button>
-            </form>
-        </div>
+    </form>
+    <div class="choices-container">
+        <button id="yesButton" class="choice-button">Yes</button>
+        <button id="noButton" class="choice-button">No</button>
     </div>
-
-    <script>
-        document.getElementById('actuatorTestBtn').onclick = function() {
-            window.location.href = 'actuator_test.html';
-        };
-
-        document.getElementById('sensorTestBtn').onclick = function() {
-            window.location.href = 'sensor_test.html';
-        };
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
