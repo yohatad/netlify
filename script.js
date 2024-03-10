@@ -1,39 +1,53 @@
-window.onload = function() {
-    var nameForm = document.getElementById('nameForm');
-    var nameInput = document.getElementById('nameInput');
-    var yesButton = document.getElementById('yesButton');
-    var noButton = document.getElementById('noButton');
-    var userName = '';
+document.addEventListener('DOMContentLoaded', function() {
+    const nameForm = document.getElementById('nameForm');
+    const nameInput = document.getElementById('nameInput');
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    let userName = '';
 
-    nameForm.onsubmit = function(event) {
-        event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+    nameForm.addEventListener('submit', function(event) {
+        event.preventDefault();
         userName = nameInput.value.trim();
         if (userName) {
-            alert('Hello, ' + userName + '! Please make your choice.');
+            alert(`Hello, ${userName}! Please make your choice.`);
         } else {
             alert('Please enter your name.');
         }
-    };
+    });
 
-    function sendResponse(response) {
+    yesButton.addEventListener('click', function() {
         if (userName) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://fit-frank-stork.ngrok-free.app/submit', true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var json = JSON.parse(xhr.responseText);
-                    console.log('Success:', json);
-                }
-            };
-            var data = JSON.stringify({ name: userName, response: response });
-            xhr.send(data);
-            alert(userName + ' clicked ' + response);
+            fetch('https://fit-frank-stork.ngrok-free.app/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: userName, response: 'Yes' }),
+            })
+            .then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch(error => console.error('Error:', error));
+            alert(`${userName} clicked Yes`);
         } else {
             alert('Please enter your name first.');
         }
-    }
+    });
 
-    yesButton.onclick = function() { sendResponse('Yes'); };
-    noButton.onclick = function() { sendResponse('No'); };
-};
+    noButton.addEventListener('click', function() {
+        if (userName) {
+            fetch('https://fit-frank-stork.ngrok-free.app/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: userName, response: 'No' }),
+            })
+            .then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch(error => console.error('Error:', error));
+            alert(`${userName} clicked No`);
+        } else {
+            alert('Please enter your name first.');
+        }
+    });
+});

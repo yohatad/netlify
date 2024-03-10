@@ -73,25 +73,3 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
-#actuatorList ul {
-    list-style-type: none; /* Remove default list styling */
-}
-
-#actuatorList li {
-    padding: 5px; /* Add some padding for better readability */
-    font-size: 18px; /* Increase font size for better visibility */
-}
-
-.status {
-    color: green; /* Set the checkmark color to green */
-    margin-left: 10px; /* Add space between the test name and the checkmark */
-    display: none; /* Hide checkmark by default */
-}
-
-/* Add other styles as necessary */
-
-.checkmark {
-    color: green;
-}
-
