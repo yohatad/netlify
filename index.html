@@ -6,22 +6,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="column left-column">
-        <form id="nameForm" class="input-container">
+    <form id="nameForm">
+        <div class="input-container">
             <label for="nameInput">Enter Your Name:</label>
             <input type="text" id="nameInput" placeholder="Your Name Here">
             <button type="submit" id="submitName">Submit</button>
-        </form>
-        <div id="incomingText" class="incoming-text-container">
-            <p> </p>
         </div>
-    </div>
-    <div class="column right-column">
-        <button id="receiveMessage" class="receive-message-button">Receive Message</button>
-        <div class="choices-container">
-            <button id="yesButton" class="choice-button">Yes</button>
-            <button id="noButton" class="choice-button">No</button>
-        </div>
+    </form>
+    <div class="choices-container">
+        <button id="yesButton" class="choice-button">Yes</button>
+        <button id="noButton" class="choice-button">No</button>
     </div>
     <script src="script.js" defer></script>
 </body>

@@ -1,91 +1,74 @@
 body, html {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
-
-.container, .button-container {
-  text-align: center;
-  padding: 20px;
-}
-
-.input-container, .button-container {
-  margin-bottom: 20px;
-}
-
-.choice-button, .receive-message-button {
-  font-size: 20px;
-  padding: 10px 20px;
-  margin: 10px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-#yesButton {
-  background-color: #4CAF50;
-  color: white;
-}
-
-#noButton {
-  background-color: #f44336;
-  color: white;
-}
-
-.receive-message-button {
-  background-color: #008CBA;
-  color: white;
-}
-
-#yesButton:hover, #noButton:hover, .receive-message-button:hover {
-  transform: scale(1.1);
-}
-
-#submitName, .receive-message-button {
-  background-color: #008CBA;
-  color: white;
-  padding: 10px 20px;
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  width: 80%;
-  max-width: 500px;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.incoming-text-container {
-  background-color: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  width: 80%;
-  max-width: 500px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-}
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light grey background */
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .input-container {
+    margin-bottom: 40px; /* Increased spacing */
+  }
+  
+  .choice-button {
+    font-size: 60px; /* Increased font size for bigger buttons */
+    padding: 20px 40px; /* Increased padding for larger buttons */
+    margin: 20px;
+    border: 2px solid #ddd; /* Added border for style */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for interaction */
+  }
+  
+  #yesButton {
+    background-color: #4CAF50; /* More vibrant green */
+    color: white;
+  }
+  
+  #noButton {
+    background-color: #f44336; /* More vibrant red */
+    color: white;
+  }
+  
+  #yesButton:hover, #noButton:hover {
+    transform: scale(1.1); /* Button grows when hovered */
+  }
+  
+  #submitName {
+    background-color: #008CBA; /* Professional blue */
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px; /* Rounded corners */
+    width: 80%; /* Larger input field */
+    max-width: 500px; /* Maximum width */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
